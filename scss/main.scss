@@ -1,8 +1,84 @@
+
+
 /* Bootstrap Variables */
+$fa-font-path: "../bower_components/font-awesome/fonts/";
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
+
 /* Import Bootstrap */
+@import "../bower_components/font-awesome/scss/font-awesome";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
+//
+// body {
+//     box-sizing:border-box;
+//
+// }
 
- 
+
+.outer-container {
+   width: 100%;
+   height: 100%;
+   background-image: url(../images/bg.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   padding: .5em 15% 3em 15%;
+}
+
+
+
+
+.social-btn-wrapper {
+   margin-bottom: 5px;
+
+      // a {
+      //    margin: 0px; display: block; width: 100%; height: 100%;
+      // }
+
+
+
+
+
+
+}
+.fa-stack-1x {
+    color:white;
+    opacity: .5;
+}
+.icon-facebook {color: #455995;}
+.icon-rss      {color: #CA8F3C;}
+.icon-twitter  {color: #6B8EC5;}
+.icon-youtube  {color: #B03931;}
+
+
+nav .nav-btn {
+   display: inline-block;
+   background-color: #b12b32;
+   line-height: 40px;
+
+   a{
+      margin: 0px; display: block; width: 100%; height: 100%;
+   }
+
+   span {
+      color: white;
+      font-weight: 200;
+      font-size: 12px;
+   }
+
+   #nav-decoration {
+      font-weight: 600;
+   }
+
+}
+
+
+/*http://stackoverflow.com/a/25023129*/
+.row.no-pad{
+  margin-right:0;
+  margin-left:0;
+}
+.row.no-pad > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}
