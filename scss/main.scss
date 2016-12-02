@@ -1,19 +1,34 @@
 
 
 /* Bootstrap Variables */
-$fa-font-path: "../bower_components/font-awesome/fonts/";
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+$grid-gutter-width: 10px !default;
+
+$fa-font-path: "../bower_components/font-awesome/fonts/";
+
+
 
 
 /* Import Bootstrap */
 @import "../bower_components/font-awesome/scss/font-awesome";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
-//
-// body {
-//     box-sizing:border-box;
-//
-// }
+
+
+/* Mixins */
+// http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+body {
+   font-family: Helvetica, sans-serif;
+}
 
 
 .outer-container {
@@ -22,7 +37,7 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
    background-image: url(../images/bg.jpg);
    background-size: cover;
    background-repeat: no-repeat;
-   padding: .5em 15% 3em 15%;
+   padding: .5em 10% 3em 10%;
 }
 
 
@@ -30,17 +45,13 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 .social-btn-wrapper {
    margin-bottom: 5px;
-
-      // a {
-      //    margin: 0px; display: block; width: 100%; height: 100%;
-      // }
-
-
-
-
-
-
+   float:right;
+   li {
+      margin: 0 -3px;
+      padding: 0;
+   }
 }
+
 .fa-stack-1x {
     color:white;
     opacity: .5;
@@ -53,24 +64,152 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 nav .nav-btn {
    display: inline-block;
-   background-color: #b12b32;
-   line-height: 40px;
+   line-height: 32px;
 
    a{
-      margin: 0px; display: block; width: 100%; height: 100%;
+         background-color: #b12b32;
+         color: white;
+         font-weight: 200;
+         font-size: 14px;
+         display: block;
+         margin: 0px;
+         width: 100%;
+         height: 100%;
    }
 
-   span {
-      color: white;
-      font-weight: 200;
-      font-size: 12px;
-   }
 
-   #nav-decoration {
+   :before,:after {
+      content: "";
       font-weight: 600;
    }
 
 }
+
+
+#image-carousel {
+   .top-image{
+      margin-top: 20px;
+      position: relative;
+      background-image: url(../images/top-image.png);
+      background-size: 130%;
+      background-position: 10% 25%;
+      background-repeat: no-repeat;
+
+      height: 344px;
+      border: 10px solid white;
+
+      &:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left:0;
+         right:0;
+         bottom: 0;
+         background-image: url(../images/grid.png);
+         opacity: .5;
+      }
+
+      img {
+         @include vertical-align();
+         float: left;
+         margin-left: 2em;
+         width:40%;
+      }
+
+   }
+}
+
+#news{
+
+   ul {
+      margin: 20px 5px;
+   }
+
+   .post {
+      background-color: white;
+      height: 350px;
+
+      padding: 18px 24px 8px 24px;
+
+      .title {
+         font-size: 24px;
+         font-weight: 300;
+      }
+
+      .date {
+         color: #acacac;
+      }
+
+      a{
+         width: 100%;
+         color: #b12b32;
+      }
+
+
+
+   }
+
+
+}
+
+
+
+#boarders {
+   margin-top: 24px;
+
+   .skateboarder-container {
+      position: relative;
+      border: 5px solid white;
+      margin-bottom: 10px;
+      padding: 0px 25px;
+      height: 232px;
+
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      h1 {
+         color: white;
+
+         font-weight: 600;
+         font-size: 34px;
+
+      }
+   }
+
+
+   #sk8er-3{
+      background-image: url(../images/sk8er-1.png);
+   }
+   #sk8er-4{
+      background-image: url(../images/sk8er-2.png);
+      background-position: right 25% bottom;
+      height: 476px;
+   }
+   #sk8er-2{
+      background-image: url(../images/sk8er-3.png);
+   }
+   #sk8er-1{
+      background-image: url(../images/sk8er-4.png);
+   }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*http://stackoverflow.com/a/25023129*/
